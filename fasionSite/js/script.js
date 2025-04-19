@@ -9,6 +9,12 @@ window.addEventListener('load', () => {
   {
    opacity: (1, 0),
    visibility: 'hidden',
+  },
+  {
+   duration: 2000,
+   delay: 1200,
+   easing: 'ease',
+   fill: 'forwards',
   }
  );
 });
