@@ -3,12 +3,14 @@
 ================================================ */
 const loadingAreaGrey = document.querySelector('#loading');
 const loadingAreaGreen = document.querySelector('#loading-screen');
+const loadingText = document.querySelector('#loading p');
 
 window.addEventListener('load', () => {
  // ローディング中（グレースクリーン）
  loadingAreaGrey.animate(
   {
-   opacity: [1, 0],
+   backdropFilter: ['blur(10px)', 'blur(0)'],
+   background: ['rgba(238, 221, 136, 1)', 'rgba(238, 221, 136, 0)'],
    visibility: 'hidden',
   },
   {
@@ -27,6 +29,25 @@ window.addEventListener('load', () => {
   {
    duration: 2000,
    delay: 800,
+   easing: 'ease',
+   fill: 'forwards',
+  }
+ );
+
+ // ローディング中テキスト
+ loadingText.animate(
+  [
+   {
+    opacity: 1,
+    offset: .8, //80%
+   },
+   {
+    opacity: 0,
+    offset: 1, //100%
+   },
+  ],
+  {
+   duration: 1200,
    easing: 'ease',
    fill: 'forwards',
   }
