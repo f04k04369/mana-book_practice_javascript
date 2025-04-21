@@ -27,14 +27,17 @@ COMMON
 p {
     line-height: 1.7;
 }
+
 img {
     max-width: 100%;
 }
+
 .title {
     font-family: var(--oswald-font);
     font-size: min(10vw, 4rem);
     margin-bottom: 2rem;
 }
+
 .btn {
     color: var(--white);
     background: var(--brown);
@@ -45,26 +48,143 @@ img {
     margin: 2rem 0;
     transition: .4s;
 }
-.fadein{
+
+.fadein {
     opacity: 0;
 }
+
 /*
 LAYOUT
 ================================================ */
 .wrapper {
- max-width: 38rem;
- margin: auto;
- padding: 0 1rem;
+    max-width: 38rem;
+    margin: auto;
+    padding: 0 1rem;
 }
 
 /*
 LOADING
 ================================================ */
 #loading {
- background-color: var(--light-green);
- position: fixed;
- inset: 0;
- z-index: 9999;
- display: grid;
- place-items: center;
+    background-color: var(--light-grey);
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+}
+
+#loading-screen {
+    background-color: var(--light-green);
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+}
+
+/*
+HERO
+================================================ */
+.hero {
+    height: 100vh;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    width: 50%;
+    height: 100vh;
+    background: url('../images/bg-hero.jpg') no-repeat center / cover;
+    position: absolute;
+    inset: 0;
+}
+
+.hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+    width: 100%;
+    font-size: max(12vw, 3rem);
+    line-height: 1.2;
+}
+
+/*
+DESKTOP SIZE
+================================================ */
+@media(min-width: 800px) {
+
+    /* COMMON */
+    .title {
+        margin-bottom: 3rem;
+    }
+
+    .btn:hover {
+        color: var(--brown);
+        background: var(--light-green);
+    }
+
+    /* SLIDE MENU */
+    .btn-menu:hover {
+        background-color: var(--light-green);
+    }
+
+    #menu-close:hover svg {
+        fill: var(--brown);
+    }
+
+    .menu-list a:hover {
+        transition: .4s;
+        color: var(--green);
+    }
+
+    /* CONCEPT*/
+    .concept {
+        display: flex;
+        margin: 16rem 0;
+    }
+
+    .concept p {
+        text-align-last: left;
+    }
+
+    .concept img {
+        margin: -6rem 0;
+        max-width: 38rem;
+    }
+
+    /* GALLERY */
+    .gallery {
+        flex-direction: row;
+    }
+
+    .gallery-image {
+        width: 50vw;
+        margin: 0;
+    }
+
+    .gallery-image img {
+        height: 100vh;
+    }
+
+    .gallery-content {
+        width: 30vw;
+    }
+
+    .gallery-thumbnails {
+        gap: 2vw;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-thumbnails img:hover {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+        transition: .4s;
+    }
+
+    /* SHOP */
+    .shop {
+        margin-top: 20rem;
+        height: 50rem;
+    }
 }
