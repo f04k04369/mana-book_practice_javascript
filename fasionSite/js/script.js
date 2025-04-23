@@ -53,3 +53,11 @@ window.addEventListener('load', () => {
   }
  );
 });
+
+/*
+画像ギャラリー
+================================================ */
+const maianImage = document.querySelector('.gallery-image img');
+const thumbnailImages = document.querySelectorAll('.gallery-thumbnails img');
+
+console.log(thumbnailImages);
