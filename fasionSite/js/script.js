@@ -57,7 +57,11 @@ window.addEventListener('load', () => {
 /*
 画像ギャラリー
 ================================================ */
-const maianImage = document.querySelector('.gallery-image img');
+const mainImage = document.querySelector('.gallery-image img');
 const thumbnailImages = document.querySelectorAll('.gallery-thumbnails img');
 
-console.log(thumbnailImages);
+for(let i = 0; i < thumbnailImages.length; i++) {
+ thumbnailImages[i].addEventListener('mouseover', () => {
+  mainImage.animate({opacity: [0, 1]}, 500);
+ });
+}
