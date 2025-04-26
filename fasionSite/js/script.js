@@ -62,7 +62,8 @@ const mainImage = document.querySelector('.gallery-image img');
 const thumbnailImages = document.querySelectorAll('.gallery-thumbnails img');
 
 for(let i = 0; i < thumbnailImages.length; i++) {
- thumbnailImages[i].addEventListener('mouseover', () => {
+ thumbnailImages[i].addEventListener('mouseover', (e) => {
+  mainImage.src = e.target.src
   mainImage.animate({opacity: [0, 1]}, 500);
  });
 }
